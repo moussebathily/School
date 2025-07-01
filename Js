@@ -1,0 +1,3 @@
+import * as Speech from 'expo-speech';
+
+Speech.speak('Bonjour ! Je suis ton assistant éducatif.');
