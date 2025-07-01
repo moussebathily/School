@@ -1,0 +1,8 @@
+import * as Speech from 'expo-speech';
+
+function speak(text) {
+  Speech.speak(text);
+}
+
+// Après avoir reçu la réponse IA :
+speak(answer);
