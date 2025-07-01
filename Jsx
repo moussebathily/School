@@ -1,0 +1,52 @@
+import React, { useState } from 'react';
+import { View, TextInput, Button, Text, ScrollView } from 'react-native';
+
+export default function ChatIA() {
+  const [input, setInput] = useState('');
+  const [messages, setMessages] = useState([]);
+
+  async function sendQuestion() {
+    if (!input.trim()) return;
+
+    // Ajouter la question à la conversation
+    setMessages([...messages, { role: 'user', text: input }]);
+
+    // Appeler l'API OpenAI GPT-4 (à implémenter)
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer TON_API_KEY`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'gpt-4o-mini',
+        messages: [{ role: 'user', content: input }],
+      }),
+    });
+    const data = await response.json();
+    const answer = data.choices[0].message.content;
+
+    // Ajouter la réponse à la conversation
+    setMessages(current => [...current, { role: 'assistant', text: answer }]);
+    setInput('');
+  }
+
+  return (
+    <View style={{ flex: 1, padding: 10 }}>
+      <ScrollView style={{ flex: 1, marginBottom: 10 }}>
+        {messages.map((m, i) => (
+          <Text key={i} style={{ marginVertical: 5, color: m.role === 'user' ? 'blue' : 'green' }}>
+            {m.role === 'user' ? 'Vous :' : 'Assistant :'} {m.text}
+          </Text>
+        ))}
+      </ScrollView>
+      <TextInput
+        value={input}
+        onChangeText={setInput}
+        placeholder="Pose ta question"
+        style={{ borderWidth: 1, borderColor: '#ccc', padding: 8, marginBottom: 10 }}
+      />
+      <Button title="Envoyer" onPress={sendQuestion} />
+    </View>
+  );
+}
