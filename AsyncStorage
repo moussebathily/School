@@ -1,0 +1,8 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+// Sauvegarder
+await AsyncStorage.setItem('chatHistory', JSON.stringify(messages));
+
+// Charger
+const savedMessages = await AsyncStorage.getItem('chatHistory');
+if (savedMessages) setMessages(JSON.parse(savedMessages));
