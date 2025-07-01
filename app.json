@@ -1,0 +1,10 @@
+Constants.manifest.extra :
+
+{
+  "expo": {
+    // ... autres configs ...
+    "extra": {
+      "OPENAI_API_KEY": "ta_cle_api_openai_ici"
+    }
+  }
+}
