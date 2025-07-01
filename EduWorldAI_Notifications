@@ -1,0 +1,14 @@
+EduWorldAI_Notifications/
+ ├─ App.js
+ ├─ package.json
+ ├─ babel.config.js
+ ├─ firebaseConfig.js
+ ├─ src/
+ │    ├─ components/
+ │    │    └─ EventCalendar.js
+ │    ├─ screens/
+ │    │    └─ HomeScreen.js
+ │    └─ notifications/
+ │         └─ NotificationHandler.js
+ └─ assets/
+      └─ (images, icônes, sons éventuels)
