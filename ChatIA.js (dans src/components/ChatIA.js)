@@ -1,0 +1,99 @@
+import React, { useState } from 'react';
+import { View, TextInput, Button, Text, ScrollView, StyleSheet, ActivityIndicator, KeyboardAvoidingView, Platform } from 'react-native';
+import Constants from 'expo-constants';
+
+const OPENAI_API_KEY = Constants.manifest.extra.OPENAI_API_KEY;
+
+export default function ChatIA() {
+  const [input, setInput] = useState('');
+  const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  async function sendQuestion() {
+    if (!input.trim()) return;
+
+    setMessages(prev => [...prev, { role: 'user', text: input }]);
+    setLoading(true);
+
+    try {
+      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${OPENAI_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: 'gpt-4o-mini',
+          messages: [
+            { role: 'system', content: 'Tu es un assistant pédagogique aidant les élèves à comprendre les mathématiques et autres matières.' },
+            ...messages.map(m => ({ role: m.role, content: m.text })),
+            { role: 'user', content: input }
+          ],
+          max_tokens: 500,
+          temperature: 0.7,
+        }),
+      });
+
+      const data = await response.json();
+      const answer = data.choices[0].message.content;
+
+      setMessages(prev => [...prev, { role: 'assistant', text: answer }]);
+      setInput('');
+    } catch (error) {
+      setMessages(prev => [...prev, { role: 'assistant', text: 'Désolé, une erreur est survenue.' }]);
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : undefined}
+      style={styles.container}
+    >
+      <ScrollView style={styles.messagesContainer}>
+        {messages.map((m, i) => (
+          <Text
+            key={i}
+            style={[styles.message, m.role === 'user' ? styles.user : styles.assistant]}
+          >
+            {m.role === 'user' ? 'Vous :' : 'Assistant :'} {m.text}
+          </Text>
+        ))}
+      </ScrollView>
+
+      {loading && <ActivityIndicator size="large" color="#0000ff" style={{ marginBottom: 10 }} />}
+
+      <View style={styles.inputContainer}>
+        <TextInput
+          value={input}
+          onChangeText={setInput}
+          placeholder="Pose ta question ici..."
+          style={styles.input}
+          multiline
+          editable={!loading}
+        />
+        <Button title="Envoyer" onPress={sendQuestion} disabled={loading} />
+      </View>
+    </KeyboardAvoidingView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, padding: 10, backgroundColor: '#fff' },
+  messagesContainer: { flex: 1, marginBottom: 10 },
+  message: { marginVertical: 5, fontSize: 16 },
+  user: { color: 'blue', textAlign: 'right' },
+  assistant: { color: 'green', textAlign: 'left' },
+  inputContainer: { flexDirection: 'row', alignItems: 'center' },
+  input: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    padding: 10,
+    marginRight: 10,
+    maxHeight: 100,
+  },
+});
