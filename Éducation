@@ -1,0 +1,14 @@
+EduWorldAI/
+ ├─ README.md
+ ├─ /src/
+ │   ├─ App.js                       # Entrée principale RN
+ │   ├─ /components/                 # Composants UI réutilisables
+ │   ├─ /screens/                    # Écrans (login, dashboard, cours, quiz, chat IA)
+ │   ├─ /services/                   # Services API (Supabase, OpenAI, speech)
+ │   └─ /i18n/                      # Fichiers de traduction
+ ├─ /config/
+ │   └─ supabase.js                  # Config Supabase
+ ├─ /admin/                         # (optionnel) interface admin React Web
+ ├─ /assets/                        # Images, sons, vidéos
+ ├─ package.json                    # Dépendances et scripts
+ └─ ...                            # Autres fichiers config (babel, eslint...)
