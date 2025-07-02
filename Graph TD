@@ -1,0 +1,7 @@
+graph TD
+    A[Navigation & Layout] --> B[Dashboard]
+    B --> C[Gestion des Étudiants]
+    C --> D[Gestion des Classes]
+    D --> E[Système de Présence]
+    E --> F[Gestion des Notes]
+    F --> G[Rapports & Analytics]
