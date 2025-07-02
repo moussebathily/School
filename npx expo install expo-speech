@@ -1,0 +1,8 @@
+import * as Speech from 'expo-speech';
+
+function speakAnswer(text) {
+  Speech.speak(text, {
+    language: 'fr-FR', // ou 'en-US'
+    rate: 1.0,
+  });
+}
