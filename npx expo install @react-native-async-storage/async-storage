@@ -1,0 +1,17 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useEffect } from 'react';
+
+// Charger à l'ouverture
+useEffect(() => {
+  loadMessages();
+}, []);
+
+async function loadMessages() {
+  const saved = await AsyncStorage.getItem('chatHistory');
+  if (saved) setMessages(JSON.parse(saved));
+}
+
+// Sauvegarder après chaque message
+useEffect(() => {
+  AsyncStorage.setItem('chatHistory', JSON.stringify(messages));
+}, [messages]);
