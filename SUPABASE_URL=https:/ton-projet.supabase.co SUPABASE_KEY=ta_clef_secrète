@@ -1,0 +1,2 @@
+npm install express cors dotenv @supabase/supabase-js
+node server.js
