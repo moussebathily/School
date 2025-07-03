@@ -1,0 +1,15 @@
+# 1. Cloner ton dépôt s’il ne l’est pas encore
+git clone https://github.com/moussebathily/School.git
+cd School
+
+# 2. Copier les fichiers dans le dépôt (si tu as le dossier ZIP extrait)
+cp -r /chemin/vers/eduworld-ai-full/* .
+
+# 3. Ajouter tous les fichiers
+git add .
+
+# 4. Commit avec un message clair
+git commit -m "Ajout du backend, Chat IA vocal, quiz interactif, dashboard élève/professeur"
+
+# 5. Pousser vers GitHub
+git push origin main
