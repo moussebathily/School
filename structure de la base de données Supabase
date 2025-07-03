@@ -1,0 +1,122 @@
+-- Users (élèves, profs, admins)
+create table users (
+  id uuid primary key default gen_random_uuid(),
+  email text unique not null,
+  password_hash text not null,
+  full_name text,
+  role text check (role in ('eleve', 'professeur', 'admin')) not null default 'eleve',
+  created_at timestamp with time zone default now()
+);
+
+-- Forums
+create table forums (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  description text,
+  created_by uuid references users(id) on delete cascade,
+  created_at timestamp with time zone default now()
+);
+
+-- Topics in forums
+create table topics (
+  id uuid primary key default gen_random_uuid(),
+  forum_id uuid references forums(id) on delete cascade,
+  title text not null,
+  created_by uuid references users(id) on delete cascade,
+  created_at timestamp with time zone default now()
+);
+
+-- Posts in topics
+create table posts (
+  id uuid primary key default gen_random_uuid(),
+  topic_id uuid references topics(id) on delete cascade,
+  content text not null,
+  created_by uuid references users(id) on delete cascade,
+  created_at timestamp with time zone default now()
+);
+
+-- Study Groups
+create table groups (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  description text,
+  is_public boolean default true,
+  created_by uuid references users(id) on delete cascade,
+  created_at timestamp with time zone default now()
+);
+
+-- Group members
+create table group_members (
+  group_id uuid references groups(id) on delete cascade,
+  user_id uuid references users(id) on delete cascade,
+  role text check (role in ('membre', 'admin')) default 'membre',
+  joined_at timestamp with time zone default now(),
+  primary key (group_id, user_id)
+);
+
+-- Quizzes
+create table quizzes (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  description text,
+  created_by uuid references users(id) on delete cascade,
+  level text,
+  created_at timestamp with time zone default now()
+);
+
+-- Questions for quizzes
+create table questions (
+  id uuid primary key default gen_random_uuid(),
+  quiz_id uuid references quizzes(id) on delete cascade,
+  question_text text not null,
+  options jsonb not null, -- exemple: ['option1', 'option2', ...]
+  correct_option text not null
+);
+
+-- Quiz results
+create table quiz_results (
+  id uuid primary key default gen_random_uuid(),
+  quiz_id uuid references quizzes(id) on delete cascade,
+  user_id uuid references users(id) on delete cascade,
+  score integer,
+  taken_at timestamp with time zone default now()
+);
+
+-- Shared resources
+create table resources (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  description text,
+  url text,
+  file_path text,
+  uploaded_by uuid references users(id) on delete cascade,
+  created_at timestamp with time zone default now()
+);
+
+-- Chat messages (private or group)
+create table chat_messages (
+  id uuid primary key default gen_random_uuid(),
+  group_id uuid references groups(id),
+  sender_id uuid references users(id) on delete cascade,
+  message_text text,
+  created_at timestamp with time zone default now()
+);
+
+-- Videos pédagogiques
+create table videos (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  description text,
+  url text,
+  uploaded_by uuid references users(id) on delete cascade,
+  created_at timestamp with time zone default now()
+);
+
+-- Notifications
+create table notifications (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references users(id) on delete cascade,
+  message text not null,
+  is_read boolean default false,
+  created_at timestamp with time zone default now()
+);
