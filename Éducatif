@@ -1,0 +1,842 @@
+🔄 **HTML Edit Mode** - Processing your edit request...
+
+ Here are the key updates you requested:
+
+1. Update the creator information in the footer:
+
+```diff
+<<<<<<< SEARCH
+                            <li class="flex items-center text-gray-400"><i class="fas fa-envelope mr-2"></i> contact@eduvision.com</li>
+                            <li class="flex items-center text-gray-400"><i class="fas fa-phone mr-2"></i> +33 1 23 45 67 89</li>
+=======
+                            <li class="flex items-center text-gray-400"><i class="fas fa-envelope mr-2"></i> Afrikoin1@gmail.com</li>
+                            <li class="flex items-center text-gray-400"><i class="fas fa-phone mr-2"></i> +352 661 728 756</li>
+>>>>>>> REPLACE
+```
+
+
+2. Update the copyright to show creator name:
+
+```diff
+<<<<<<< SEARCH
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 EduVision. Tous droits réservés.</p>
+=======
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Moussé Bathily. Tous droits réservés.</p>
+>>>>>>> REPLACE
+```
+
+
+3. Update the logo alt text to include creator name:
+
+```diff
+<<<<<<< SEARCH
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1833bc0e-47ec-47c8-a505-fc4f067e7c89.png" alt="Logo EduVision - Un livre ouvert avec des lignes de code et des molécules représentant l'éducation multidisciplinaire" class="rounded-full">
+=======
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1833bc0e-47ec-47c8-a505-fc4f067e7c89.png" alt="Logo EduVision par Moussé Bathily - Un livre ouvert avec des lignes de code et des molécules représentant l'éducation multidisciplinaire" class="rounded-full">
+>>>>>>> REPLACE
+```
+
+
+4. Update the footer logo alt text:
+
+```diff
+<<<<<<< SEARCH
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2eec99e3-c292-47de-abf0-df042a44129a.png" alt="Logo EduVision" class="rounded-full mr-2">
+=======
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2eec99e3-c292-47de-abf0-df042a44129a.png" alt="Logo EduVision par Moussé Bathily" class="rounded-full mr-2">
+>>>>>>> REPLACE
+```
+
+
+These changes will:
+1. Update the contact information to your personal details
+2. Add your name to the copyright
+3. Credit you as the creator in the logo alt texts
+4. Keep all other functionality intact
+
+Would you like me to make any additional changes to the content or design?Here is the updated HTML content after applying above edits:
+
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduVision - Plateforme Éducative Multilingue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --secondary: #10B981;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #E5E7EB;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background-color: var(--secondary);
+            transition: width 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .language-flag {
+            width: 24px;
+            height: 16px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="gradient-bg text-white shadow-lg">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1833bc0e-47ec-47c8-a505-fc4f067e7c89.png" alt="Logo EduVision par Moussé Bathily - Un livre ouvert avec des lignes de code et des molécules représentant l'éducation multidisciplinaire" class="rounded-full">
+                    <h1 class="text-2xl font-bold">EduVision</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#features" class="hover:text-gray-200 transition">Fonctionnalités</a>
+                    <a href="#courses" class="hover:text-gray-200 transition">Cours</a>
+                    <a href="#community" class="hover:text-gray-200 transition">Communauté</a>
+                    <a href="#pricing" class="hover:text-gray-200 transition">Abonnements</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-white text-gray-800 px-4 py-2 rounded-full font-semibold hover:bg-gray-100 transition">
+                        Connexion
+                    </button>
+                    <button class="hidden md:block bg-transparent border border-white text-white px-4 py-2 rounded-full font-semibold hover:bg-white hover:text-gray-800 transition">
+                        S'inscrire
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="gradient-bg text-white py-16">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 animate-fadeIn" style="animation-delay: 0.1s;">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Apprendre sans limites pour tous les âges</h2>
+                    <p class="text-xl mb-6">Plateforme éducative multilingue adaptée de 3 ans à l'université avec assistance IA personnalisée.</p>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <div class="bg-white bg-opacity-20 px-3 py-1 rounded-full">Mathématiques</div>
+                        <div class="bg-white bg-opacity-20 px-3 py-1 rounded-full">Sciences</div>
+                        <div class="bg-white bg-opacity-20 px-3 py-1 rounded-full">Langues</div>
+                        <div class="bg-white bg-opacity-20 px-3 py-1 rounded-full">Histoire</div>
+                    </div>
+                    <button class="bg-white text-gray-800 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition shadow-lg">
+                        Commencer maintenant <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                <div class="md:w-1/2 animate-fadeIn" style="animation-delay: 0.3s;">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ca5709e7-d964-468f-a59c-ca7c2bf7caa6.png" alt="Enfants et adultes de différentes cultures utilisant des tablettes et ordinateurs pour apprendre ensemble dans un environnement moderne" class="rounded-xl shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- Age Selection -->
+        <section class="bg-white py-12">
+            <div class="container mx-auto px-4">
+                <h3 class="text-2xl font-bold text-center mb-8">Sélectionnez votre groupe d'âge</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-indigo-50 p-6 rounded-xl text-center cursor-pointer hover:shadow-md transition">
+                        <div class="mx-auto mb-4 w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center">
+                            <i class="fas fa-child text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-1">3-6 ans</h4>
+                        <p class="text-sm text-gray-600">Apprentissage ludique</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl text-center cursor-pointer hover:shadow-md transition">
+                        <div class="mx-auto mb-4 w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-user-graduate text-blue-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-1">6-12 ans</h4>
+                        <p class="text-sm text-gray-600">Fondamentaux scolaires</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-xl text-center cursor-pointer hover:shadow-md transition">
+                        <div class="mx-auto mb-4 w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+                            <i class="fas fa-user text-green-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-1">12-18 ans</h4>
+                        <p class="text-sm text-gray-600">Cours secondaires</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-xl text-center cursor-pointer hover:shadow-md transition">
+                        <div class="mx-auto mb-4 w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-purple-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-1">18+ ans</h4>
+                        <p class="text-sm text-gray-600">Études supérieures</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Nos Fonctionnalités Innovantes</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- AI Assistant -->
+                    <div class="bg-white p-6 rounded-xl shadow-md card-hover transition">
+                        <div class="flex mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-robot text-indigo-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Assistant IA Pédagogique</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Notre chatbot intelligent explique les concepts complexes simplement et corrige vos exercices avec un feedback personnalisé.</p>
+                        <button class="text-indigo-600 font-medium flex items-center">
+                            Essayer l'assistant <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Multilingual -->
+                    <div class="bg-white p-6 rounded-xl shadow-md card-hover transition">
+                        <div class="flex mb-4">
+                            <div class="bg-green-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-language text-green-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Contenus Multilingues</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Apprenez dans votre langue maternelle avec des traductions automatiques et des adaptations culturelles.</p>
+                        <div class="flex space-x-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-gray-100 rounded">Français</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 rounded">Bambara</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 rounded">Anglais</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 rounded">Espagnol</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Microlearning -->
+                    <div class="bg-white p-6 rounded-xl shadow-md card-hover transition">
+                        <div class="flex mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-hourglass-half text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Micro-Apprentissage</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Leçons courtes et interactives de 5-15 minutes pour maximiser la concentration et la rétention.</p>
+                        <div class="flex items-center">
+                            <div class="w-3/4 bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                            <span class="ml-2 text-sm font-medium text-gray-500">75% complété</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Community -->
+                    <div class="bg-white p-6 rounded-xl shadow-md card-hover transition">
+                        <div class="flex mb-4">
+                            <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-users text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Communauté Interactive</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Échangez avec d'autres apprenants, posez des questions et recevez de l'aide dans nos espaces communautaires.</p>
+                        <div class="flex -space-x-2">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7b4c0143-6514-40dc-93c1-a9031da83f3a.png" alt="Photo de profil utilisateur 1" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8682aea9-2032-4849-80b6-0d89c5c2e342.png" alt="Photo de profil utilisateur 2" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d7c609c2-c4d5-432c-9ccb-c169ab7dd48d.png" alt="Photo de profil utilisateur 3" class="w-10 h-10 rounded-full border-2 border-white">
+                            <div class="w-10 h-10 rounded-full bg-purple-100 border-2 border-white flex items-center justify-center text-xs font-bold">+124</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Parcours Éducatifs</h2>
+                
+                <div class="mb-8 flex justify-center">
+                    <div class="inline-flex rounded-md shadow-sm">
+                        <button class="px-4 py-2 text-sm font-medium rounded-l-lg bg-indigo-600 text-white">
+                            Tous
+                        </button>
+                        <button class="px-4 py-2 text-sm font-medium bg-white text-gray-700">
+                            Mathématiques
+                        </button>
+                        <button class="px-4 py-2 text-sm font-medium bg-white text-gray-700">
+                            Sciences
+                        </button>
+                        <button class="px-4 py-2 text-sm font-medium bg-white text-gray-700">
+                            Langues
+                        </button>
+                        <button class="px-4 py-2 text-sm font-medium rounded-r-lg bg-white text-gray-700">
+                            Histoire
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Course 1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 card-hover transition">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0868f135-d55d-4a76-88c9-228e2ce74f67.png" alt="Concept mathématique des fractions illustré avec des pizzas colorées pour un apprentissage visuel" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-xs font-semibold px-2 py-1 bg-indigo-100 text-indigo-800 rounded">Mathématiques</span>
+                                <span class="text-xs text-gray-500">6-12 ans</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-2">Les fractions pour débutants</h3>
+                            <p class="text-gray-600 text-sm mb-4">Apprenez les bases des fractions avec des activités ludiques et des exemples concrets.</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <div class="flex text-yellow-400 text-xs">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="text-xs text-gray-500">4.5 (128 avis)</span>
+                                </div>
+                                <button class="text-indigo-600 font-medium text-sm">
+                                    Voir <i class="fas fa-chevron-right text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Course 2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 card-hover transition">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b73f9ed9-8bf4-4e43-a776-328c1e462d85.png" alt="Expérience scientifique montrant une réaction chimique colorée dans un laboratoire scolaire" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-xs font-semibold px-2 py-1 bg-green-100 text-green-800 rounded">Chimie</span>
+                                <span class="text-xs text-gray-500">12-18 ans</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-2">Introduction à la chimie</h3>
+                            <p class="text-gray-600 text-sm mb-4">Découvrez les principes fondamentaux avec des expériences virtuelles interactives.</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <div class="flex text-yellow-400 text-xs">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="text-xs text-gray-500">4.0 (97 avis)</span>
+                                </div>
+                                <button class="text-indigo-600 font-medium text-sm">
+                                    Voir <i class="fas fa-chevron-right text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Course 3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 card-hover transition">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f6e4b678-03e6-4f32-bd2f-6ee1cf940fa8.png" alt="Illustration du système solaire avec les planètes alignées et des annotations scientifiques" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-xs font-semibold px-2 py-1 bg-blue-100 text-blue-800 rounded">Astronomie</span>
+                                <span class="text-xs text-gray-500">Tous âges</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-2">Découvrir le système solaire</h3>
+                            <p class="text-gray-600 text-sm mb-4">Un voyage interactif à travers les planètes adapté à différents niveaux de compréhension.</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <div class="flex text-yellow-400 text-xs">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="text-xs text-gray-500">5.0 (235 avis)</span>
+                                </div>
+                                <button class="text-indigo-600 font-medium text-sm">
+                                    Voir <i class="fas fa-chevron-right text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <button class="px-6 py-3 bg-indigo-600 text-white rounded-full font-semibold hover:bg-indigo-700 shadow-lg transition">
+                        Explorer tous les cours <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Tutor Demo -->
+        <section class="py-16 bg-indigo-50">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <h2 class="text-3xl font-bold mb-4">Assistant Pédagogique Intelligent</h2>
+                        <p class="text-gray-600 mb-6">Obtenez des explications claires et des réponses à vos questions en langage naturel, comme si vous aviez un tuteur personnel disponible 24/7.</p>
+                        
+                        <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+                            <div class="flex mb-3">
+                                <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                                    <i class="fas fa-user text-indigo-600"></i>
+                                </div>
+                                <div class="bg-gray-100 rounded-lg px-4 py-2 w-full">
+                                    <p class="text-sm">Comment expliquer les fractions à mon enfant de 8 ans ?</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                                    <i class="fas fa-robot text-purple-600"></i>
+                                </div>
+                                <div class="bg-purple-100 rounded-lg px-4 py-2 w-full">
+                                    <p class="text-sm">Imagine une pizza coupée en 8 parts égales. Si tu en manges 2, c'est 2/8 ou 1/4 de la pizza...</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition shadow-lg">
+                            Essayer l'assistant <i class="fas fa-robot ml-2"></i>
+                        </button>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/613a0f80-8320-4bba-bb56-e1fe722eb435.png" alt="Interface d'un assistant IA montrant une conversation entre un élève et un tuteur virtuel avec des bulles de discussion" class="rounded-xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Disponible en Plusieurs Langues</h2>
+                
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="border rounded-lg p-6 text-center hover:shadow-md transition">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/77a2a6aa-5883-4f93-a1b2-5da93b4133a3.png" alt="Drapeau français" class="mx-auto mb-4">
+                        <h3 class="font-bold mb-2">Français</h3>
+                        <p class="text-sm text-gray-600">Contenu complet disponible</p>
+                    </div>
+                    <div class="border rounded-lg p-6 text-center hover:shadow-md transition">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cf04690a-4def-44f3-b386-d05d7e7c9f02.png" alt="Drapeau du Mali" class="mx-auto mb-4">
+                        <h3 class="font-bold mb-2">Bambara</h3>
+                        <p class="text-sm text-gray-600">Disponible pour cours de base</p>
+                    </div>
+                    <div class="border rounded-lg p-6 text-center hover:shadow-md transition">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/aa22cd28-043e-4715-ad4e-5797cf744618.png" alt="Drapeau anglais" class="mx-auto mb-4">
+                        <h3 class="font-bold mb-2">Anglais</h3>
+                        <p class="text-sm text-gray-600">Contenu complet disponible</p>
+                    </div>
+                    <div class="border rounded-lg p-6 text-center hover:shadow-md transition">
+                        <div class="bg-gray-100 rounded-lg mx-auto mb-4 w-20 h-12 flex items-center justify-center">
+                            <i class="fas fa-globe text-gray-400 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold mb-2">+12 autres</h3>
+                        <p class="text-sm text-gray-600">En cours de traduction</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community -->
+        <section id="community" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/571250ea-e93d-44fa-900c-991cd21205e2.png" alt="Groupe d'étudiants de différentes cultures discutant ensemble devant un tableau numérique" class="rounded-xl shadow-2xl">
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <h2 class="text-3xl font-bold mb-4">Communauté d'Apprentissage</h2>
+                        <p class="text-gray-600 mb-6">Rejoignez une communauté active d'apprenants et enseignants pour échanger, poser des questions et progresser ensemble.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-white p-2 rounded-full shadow-md mr-4">
+                                    <i class="fas fa-comments text-indigo-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-1">Forums thématiques</h3>
+                                    <p class="text-gray-600 text-sm">Discutez de sujets spécifiques avec des passionnés comme vous.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-white p-2 rounded-full shadow-md mr-4">
+                                    <i class="fas fa-question-circle text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-1">Questions/Réponses</h3>
+                                    <p class="text-gray-600 text-sm">Obtenez des réponses rapidement de la communauté ou de nos tuteurs.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-white p-2 rounded-full shadow-md mr-4">
+                                    <i class="fas fa-user-friends text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-1">Groupes d'étude</h3>
+                                    <p class="text-gray-600 text-sm">Formez des groupes pour apprendre ensemble et vous motiver mutuellement.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="mt-8 bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition shadow-lg">
+                            Rejoindre la communauté <i class="fas fa-users ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Tracking -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Suivi de Progrès Personnalisé</h2>
+                
+                <div class="bg-white rounded-xl shadow-xl p-6 max-w-4xl mx-auto">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                        <div>
+                            <h3 class="font-bold text-xl mb-1">Mathématiques Niveau 1</h3>
+                            <p class="text-gray-600">Parcours recommandé pour 6-9 ans</p>
+                        </div>
+                        <div class="mt-4 md:mt-0">
+                            <span class="text-lg font-bold">42% complété</span>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-bar mb-6">
+                        <div class="progress-fill" style="width: 42%"></div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="border rounded-lg p-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Additions</span>
+                                <span class="text-sm text-gray-500">8/10 leçons</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 mb-2">
+                                <div class="bg-green-500 h-1.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-500">
+                                <span>Difficulté: Facile</span>
+                                <span>80% réussite</span>
+                            </div>
+                        </div>
+                        
+                        <div class="border rounded-lg p-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Soustractions</span>
+                                <span class="text-sm text-gray-500">5/10 leçons</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 mb-2">
+                                <div class="bg-blue-500 h-1.5 rounded-full" style="width: 50%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-500">
+                                <span>Difficulté: Moyenne</span>
+                                <span>65% réussite</span>
+                            </div>
+                        </div>
+                        
+                        <div class="border rounded-lg p-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Multiplications</span>
+                                <span class="text-sm text-gray-500">2/10 leçons</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5 mb-2">
+                                <div class="bg-yellow-500 h-1.5 rounded-full" style="width: 20%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-500">
+                                <span>Difficulté: Difficile</span>
+                                <span>45% réussite</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex justify-center">
+                        <button class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition shadow-lg">
+                            Voir mes statistiques complètes <i class="fas fa-chart-line ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Choisissez Votre Abonnement</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Free Plan -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6 border-b">
+                            <h3 class="font-bold text-xl mb-1">Gratuit</h3>
+                            <p class="text-gray-600 text-sm">Accès de base</p>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-4xl font-bold mb-4">0€</div>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Accès limité aux cours</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>2 requêtes/jour avec l'IA</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-times text-gray-300 mr-2"></i>
+                                    <span class="text-gray-400">Contenus premium</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-times text-gray-300 mr-2"></i>
+                                    <span class="text-gray-400">Certifications</span>
+                                </li>
+                            </ul>
+                            <button class="w-full py-2 border border-indigo-600 text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 transition">
+                                Commencer
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Premium Plan -->
+                    <div class="bg-white rounded-xl shadow-2xl overflow-hidden border-2 border-indigo-600 transform scale-105">
+                        <div class="bg-indigo-600 text-white p-4 text-center">
+                            <span class="text-sm font-semibold">POPULAIRE</span>
+                        </div>
+                        <div class="p-6 border-b">
+                            <h3 class="font-bold text-xl mb-1">Premium</h3>
+                            <p class="text-gray-600 text-sm">Le plus choisi</p>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-4xl font-bold mb-1">9,99€<span class="text-gray-500 text-base font-normal"> /mois</span></div>
+                            <p class="text-sm text-gray-500 mb-4">Annuel à 99€ (17% d'économie)</p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Accès complet à tous les cours</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Requêtes illimitées avec l'IA</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Contenus premium exclusifs</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Certifications téléchargeables</span>
+                                </li>
+                            </ul>
+                            <button class="w-full py-2 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition shadow-lg">
+                                S'abonner
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Family Plan -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-6 border-b">
+                            <h3 class="font-bold text-xl mb-1">Famille</h3>
+                            <p class="text-gray-600 text-sm">Jusqu'à 5 membres</p>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-4xl font-bold mb-4">19,99€<span class="text-gray-500 text-base font-normal"> /mois</span></div>
+                            <p class="text-sm text-gray-500 mb-4">Annuel à 199€ (17% d'économie)</p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Tous les avantages Premium</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Profils séparés pour chacun</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Suivi individuel des progrès</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Adapté à tous les âges</span>
+                                </li>
+                            </ul>
+                            <button class="w-full py-2 border border-indigo-600 text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 transition">
+                                Pour les familles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <p class="text-sm text-gray-500">Essayez gratuitement pendant 14 jours, sans engagement</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download App -->
+        <section class="py-16 bg-gradient-to-r from-indigo-700 to-purple-600 text-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <h2 class="text-3xl font-bold mb-4">Téléchargez notre application mobile</h2>
+                        <p class="text-xl mb-6">Apprenez où que vous soyez avec notre application optimisée pour mobile.</p>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <button class="bg-white text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition flex items-center">
+                                <i class="fab fa-apple text-2xl mr-3"></i>
+                                <div class="text-left">
+                                    <div class="text-xs">Disponible sur</div>
+                                    <div>App Store</div>
+                                </div>
+                            </button>
+                            
+                            <button class="bg-white text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition flex items-center">
+                                <i class="fab fa-google-play text-2xl mr-3"></i>
+                                <div class="text-left">
+                                    <div class="text-xs">Disponible sur</div>
+                                    <div>Play Store</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7b2a0313-fadc-4527-9eed-2df62efe6654.png" alt="Smartphone affichant l'application EduVision avec une interface d'apprentissage colorée" class="rounded-lg shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2eec99e3-c292-47de-abf0-df042a44129a.png" alt="Logo EduVision par Moussé Bathily" class="rounded-full mr-2">
+                            <h3 class="text-xl font-bold">EduVision</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Plateforme éducative innovante pour tous les âges.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Navigation</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Accueil</a></li>
+                            <li><a href="#features" class="text-gray-400 hover:text-white">Fonctionnalités</a></li>
+                            <li><a href="#courses" class="text-gray-400 hover:text-white">Cours</a></li>
+                            <li><a href="#community" class="text-gray-400 hover:text-white">Communauté</a></li>
+                            <li><a href="#pricing" class="text-gray-400 hover:text-white">Tarifs</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Ressources</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Blog éducatif</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Centre d'aide</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Tutoriels</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Presse</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Contact</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-gray-400"><i class="fas fa-envelope mr-2"></i> Afrikoin1@gmail.com</li>
+                            <li class="flex items-center text-gray-400"><i class="fas fa-phone mr-2"></i> +352 661 728 756</li>
+                            <li class="flex items-center text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i> 123 Rue de l'Éducation, Paris</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Moussé Bathily. Tous droits réservés.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Conditions d'utilisation</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Politique de confidentialité</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Demo functionality for language selection
+        document.querySelectorAll('[data-age-group]').forEach(button => {
+            button.addEventListener('click', function() {
+                const ageGroup = this.getAttribute('data-age-group');
+                alert(`Vous avez sélectionné le groupe d'âge : ${this.textContent}. Redirection vers le contenu adapté...`);
+                // In a real app, would redirect or filter content based on age group
+            });
+        });
+
+        // Demo functionality for course navigation
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const courseTitle = this.querySelector('h3').textContent;
+                alert(`Ouverture du cours : ${courseTitle}. Cette démo montre simplement la navigation.`);
+                // In a real app, would open the course details page
+            });
+        });
+
+        // Demo functionality for try AI assistant button
+        document.getElementById('try-ai-btn').addEventListener('click', function() {
+            alert("Cette démo simule l'activation de l'Assistant IA. Dans l'application réelle, cela ouvrirait un chat interactif avec l'IA pédagogique.");
+        });
+
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fadeIn');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
+
+```
